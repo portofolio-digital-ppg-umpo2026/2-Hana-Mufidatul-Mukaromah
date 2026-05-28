@@ -122,13 +122,10 @@ width:100%;
 }
 
 .menu-btn{
-display:flex;
-opacity:0;
-pointer-events:none;
-transform:translateX(30px);
-transition:.35s ease;
+display:none;
 font-size:2rem;
 cursor:pointer;
+color:var(--text);
 }
 
 section{
@@ -410,7 +407,6 @@ overflow-x:hidden;
 width:100%;
 }
 
-
 nav{
 padding:18px 6%;
 }
@@ -429,8 +425,13 @@ background:var(--card);
 flex-direction:column;
 padding:25px;
 border-radius:25px;
-display:none;
-box-shadow:0 20px 40px rgba(0,0,0,.08);
+display:flex;
+gap:20px;
+box-shadow:0 20px 40px rgba(0,0,0,.25);
+opacity:0;
+pointer-events:none;
+transform:translateX(30px);
+transition:.35s ease;
 }
 
 .nav-links.active{
