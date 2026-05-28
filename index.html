@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GlowEdu Journey | Hana Mufidatul</title>
+<title>PPG Calon Guru | Hana Mufidatul</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -95,7 +95,7 @@ list-style:none;
 
 .nav-links a{
 text-decoration:none;
-color:var(--dark);
+color:var(--text);
 font-weight:600;
 transition:.3s;
 position:relative;
@@ -122,7 +122,11 @@ width:100%;
 }
 
 .menu-btn{
-display:none;
+display:flex;
+opacity:0;
+pointer-events:none;
+transform:translateX(30px);
+transition:.35s ease;
 font-size:2rem;
 cursor:pointer;
 }
@@ -259,7 +263,7 @@ margin-bottom:50px;
 .section-title h2{
 font-family:'Baloo 2',sans-serif;
 font-size:3rem;
-color:var(--lavender);
+color:var(--yellow);
 margin-bottom:10px;
 }
 
@@ -271,13 +275,18 @@ color:var(--soft);
 background:var(--card);
 border-radius:35px;
 padding:40px;
+overflow:hidden;
+width:100%;
+max-width:100%;
 box-shadow:0 18px 45px rgba(0,0,0,.35);
 }
 
 .profile-content{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:40px;
+width:100%;
+max-width:100%;
 align-items:center;
 }
 
@@ -287,8 +296,10 @@ justify-content:center;
 }
 
 .profile-image img{
-width:300px;
-height:300px;
+width:100%;
+max-width:300px;
+height:auto;
+aspect-ratio:1/1;
 object-fit:cover;
 border-radius:35px;
 border:8px solid white;
@@ -394,6 +405,12 @@ font-weight:500;
 
 @media(max-width:768px){
 
+html,body{
+overflow-x:hidden;
+width:100%;
+}
+
+
 nav{
 padding:18px 6%;
 }
@@ -403,10 +420,11 @@ display:block;
 }
 
 .nav-links{
-position:absolute;
+position:fixed;
 top:80px;
-right:6%;
-width:230px;
+right:-100%;
+width:260px;
+max-width:85vw;
 background:var(--card);
 flex-direction:column;
 padding:25px;
@@ -416,11 +434,15 @@ box-shadow:0 20px 40px rgba(0,0,0,.08);
 }
 
 .nav-links.active{
-display:flex;
+right:6%;
+opacity:1;
+pointer-events:auto;
+transform:translateX(0);
 }
 
 .hero-text h1{
-font-size:3rem;
+font-size:2.8rem;
+word-break:break-word;
 }
 
 .section-title h2{
@@ -428,16 +450,40 @@ font-size:2.4rem;
 }
 
 section{
-padding:110px 6% 70px;
+padding:110px 5% 70px;
 }
 
 .principle-box h2{
-font-size:2.2rem;
+font-size:2rem;
+}
+
+
+.glass,
+.timeline-item,
+.hero-box,
+.principle-box,
+.card{
+max-width:100%;
+}
+
+@media(max-width:768px){
+
+.glass{
+padding:25px;
+border-radius:28px;
+}
+
+.profile-image{
+width:100%;
+}
+
+.profile-image img{
+max-width:100%;
 }
 
 }
 
-</style>
+}</style>
 </head>
 <body>
 
@@ -445,7 +491,7 @@ font-size:2.2rem;
 <div class="blob blob2"></div>
 
 <nav>
-<div class="logo">PPG<span> Calon Guru</span></div>
+<div class="logo">PPG <span>Calon Guru</span></div>
 
 <ul class="nav-links" id="navLinks">
 <li><a href="#beranda">Beranda</a></li>
@@ -588,7 +634,7 @@ Menjadi guru berarti siap belajar sepanjang hayat, mendampingi peserta didik den
 </section>
 
 <footer>
-© 2026 Hana Mufidatul • GlowEdu Journey ☀️
+© 2026 Hana Mufidatul • PPG Calon Guru ☀️
 </footer>
 
 <script>
